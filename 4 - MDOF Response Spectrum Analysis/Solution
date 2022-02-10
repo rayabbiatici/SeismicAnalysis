@@ -1,0 +1,25 @@
+%% 4-1 Complete the MATLAB code uploaded to the class website to solve
+%  for the periods, mode shapes, and response quantities for the 
+%  5-story shear building example from Chopra presented in Lecture 6.
+
+The modal periods, T, are:
+
+ans =
+
+    1.9994
+    0.6850
+    0.4345
+    0.3382
+    0.2966
+
+The mode shapes, phi, are;
+
+Phi =
+
+    0.3340   -0.8958    1.1733    1.0782   -0.6409
+    0.6409   -1.1733    0.3340   -0.8958    1.0782
+    0.8958   -0.6409   -1.0782   -0.3340   -1.1733
+    1.0782    0.3340   -0.6409    1.1733    0.8958
+    1.1733    1.0782    0.8958   -0.6409   -0.3340
+    
+ 
