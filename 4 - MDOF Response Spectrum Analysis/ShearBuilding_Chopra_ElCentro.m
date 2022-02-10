@@ -64,7 +64,7 @@
      
 % Set units for ground motion
   ag = 386.4 * ag90;  % north-south acceleration                   
-  clear ag90 ; clear El_Centro_Chopra_194x8.txt; % Remove raw data from memory
+  clear ag90 ; clear ElCentroNS.txt; % Remove raw data from memory
   dt = 1/50;   
   time = dt:dt:dt*length(ag);  % Time Array
   
