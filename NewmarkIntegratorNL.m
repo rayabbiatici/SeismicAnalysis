@@ -15,7 +15,7 @@ function [a,v,u,fsh]=NewmarkIntegratorNL(gamma,beta,M,C,K,P,dt,Fy,Ksh);
   
 % Determine initial acceleration and various time-invariant parameters
   fsa=[K Ksh Fy];
-  [fs(1,:),dfs(1,:),fsh(1,:)] = ClasPlas(u(1),fsa,0,fsh(1,:));  
+  [fs(1,:),dfs(1,:),fsh(1,:)] = ClassicalPlasticity(u(1),fsa,0,fsh(1,:));  
 
   a(1) = inv(M) * (P(1) - C * v(1) - fs(1,:));
   A   = (1/(beta*dt)) * M + (gamma/beta) * C;
@@ -34,7 +34,7 @@ function [a,v,u,fsh]=NewmarkIntegratorNL(gamma,beta,M,C,K,P,dt,Fy,Ksh);
           u(i) = u(i-1) + du;
         
         % Evaluate the nonlinear spring
-          [fs(i,:),dfs(i,:),fsh(i,:)] = ClasPlas(u(i),fsa,fs(i-1,:),fsh(i-1,:));  
+          [fs(i,:),dfs(i,:),fsh(i,:)] = ClassicalPlasticity(u(i),fsa,fs(i-1,:),fsh(i-1,:));  
 
         % Compute the residual 
           res = Kdt*du + fs(i,:) - fs(i-1,:) - Peff;
